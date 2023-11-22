@@ -30,9 +30,9 @@ app.listen(process.env.PORT, () => {
   console.log(`Server is running on Port ${process.env.PORT}!`);
 });
 
-app.use("/api/user", userRouter);
-app.use("/api/auth", authRouter);
-app.use("/api/listing", listingRouter);
+app.use("/api/user", userRouter); //api/user
+app.use("/api/auth", authRouter); //api/auth
+app.use("/api/listing", listingRouter); //api/listing
 
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
