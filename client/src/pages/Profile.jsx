@@ -42,7 +42,7 @@ export default function Profile() {
       handleFileUpload(file);
     }
   }, [file]);
-
+  //Handle-Upload
   const handleFileUpload = (file) => {
     const storage = getStorage(app);
     const fileName = new Date().getTime() + file.name;
@@ -70,7 +70,7 @@ export default function Profile() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
-
+  //Handle-Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -94,7 +94,7 @@ export default function Profile() {
       dispatch(updateUserFailure(error.message));
     }
   };
-
+  //Delete-User
   const handleDeleteUser = async () => {
     try {
       dispatch(deleteUserStart());
@@ -111,7 +111,7 @@ export default function Profile() {
       dispatch(deleteUserFailure(error.message));
     }
   };
-
+  //Sign-Out
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
@@ -126,7 +126,7 @@ export default function Profile() {
       dispatch(deleteUserFailure(error.message));
     }
   };
-
+  //Show-Listings
   const handleShowListings = async () => {
     try {
       setShowListingsError(false);
