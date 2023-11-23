@@ -143,7 +143,7 @@ export default function Profile() {
       setShowListingsError(true);
     }
   };
-
+  /* Handle Listing Delete */
   const handleListingDelete = async (listingId) => {
     try {
       const res = await fetch(`/api/listing/delete/${listingId}`, {
