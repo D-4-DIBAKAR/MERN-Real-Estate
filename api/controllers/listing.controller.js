@@ -28,12 +28,13 @@ export const deleteListing = async (req, res, next) => {
     next(error);
   }
 };
-
+//Update Listing
 export const updateListing = async (req, res, next) => {
   const listing = await Listing.findById(req.params.id);
   if (!listing) {
     return next(errorHandler(404, "Listing not found!"));
   }
+  //Check Authenticate User
   if (req.user.id !== listing.userRef) {
     return next(errorHandler(401, "You can only update your own listings!"));
   }
