@@ -48,6 +48,7 @@ export default function Listing() {
     };
     fetchListing();
   }, [params.listingId]);
+  console.log(listing);
   //Listings
   return (
     <main>

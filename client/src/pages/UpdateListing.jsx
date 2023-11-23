@@ -48,31 +48,28 @@ export default function CreateListing() {
     fetchListing();
   }, []);
   //Handle Image Of Listing
-  const handleImageSubmit = async (e) => {
+  const handleImageSubmit = (e) => {
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
       setUploading(true);
       setImageUploadError(false);
+      const promises = [];
 
-      try {
-        const promises = [];
-
-        for (let i = 0; i < files.length; i++) {
-          promises.push(storeImage(files[i]));
-        }
-
-        const urls = await Promise.all(promises);
-
-        setFormData({
-          ...formData,
-          imageUrls: formData.imageUrls.concat(urls),
-        });
-
-        setImageUploadError(false);
-        setUploading(false);
-      } catch (error) {
-        setImageUploadError("Image upload failed (2 MB max per image)");
-        setUploading(false);
+      for (let i = 0; i < files.length; i++) {
+        promises.push(storeImage(files[i]));
       }
+      Promise.all(promises)
+        .then((urls) => {
+          setFormData({
+            ...formData,
+            imageUrls: formData.imageUrls.concat(urls),
+          });
+          setImageUploadError(false);
+          setUploading(false);
+        })
+        .catch((err) => {
+          setImageUploadError("Image upload failed (2 mb max per image)");
+          setUploading(false);
+        });
     } else {
       setImageUploadError("You can only upload 6 images per listing");
       setUploading(false);
@@ -141,7 +138,7 @@ export default function CreateListing() {
       });
     }
   };
-  //Handle Submit Of Listing
+  //Handle Image Of Listing
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
