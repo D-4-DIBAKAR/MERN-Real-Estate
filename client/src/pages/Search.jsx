@@ -99,7 +99,7 @@ export default function Search() {
       setSidebardata({ ...sidebardata, sort, order });
     }
   };
-
+  //Handle Submit
   const handleSubmit = (e) => {
     e.preventDefault();
     const urlParams = new URLSearchParams();
