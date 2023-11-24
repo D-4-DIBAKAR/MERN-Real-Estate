@@ -50,3 +50,4 @@ export default function ListingItem({ listing }) {
     </div>
   );
 }
+// Search Listing Card
