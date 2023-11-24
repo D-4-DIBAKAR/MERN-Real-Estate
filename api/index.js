@@ -22,7 +22,8 @@ const __dirname = path.resolve();
 
 const app = express();
 
-app.use(express.json()); //This allow json data
+app.use(express.json());
+//allow JSON data
 
 app.use(cookieParser());
 
