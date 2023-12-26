@@ -1,6 +1,6 @@
 # Real Estate Project On MERN-STACK Technology !💻 
 
-🚀 Building a Real Estate website using the MERN stack involves creating a full-stack application with MongoDB, Express.js, React.js, and Node.js. Here's a breakdown of the key features you can implement:
+🚀 Building a Real Estate website using the MERN stack involves creating a full-stack application with MongoDB, Express.js, React.js, and Node.js. Here's a breakdown of the key features you can implement: 
 
 ### User Authentication: 
 
